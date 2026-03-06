@@ -36,7 +36,7 @@ std::vector<std::string> NotificationService::scheduleReminders(
     for (const auto& loan : loans) {
         if (loan.isReturned()) continue;
         int days_until_due = DateUtils::daysBetween(today, loan.getDueDate());
-        if (days_until_due == 1) {
+        if (days_until_due == days_before) {
             due_member_ids.push_back(loan.getMemberID());
         }
     }
