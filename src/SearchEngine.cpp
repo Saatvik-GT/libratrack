@@ -87,7 +87,7 @@ std::vector<SearchResult> SearchEngine::rankResults(
 {
     std::sort(results.begin(), results.end(),
         [](const SearchResult& a, const SearchResult& b) {
-            return a.score < b.score;
+            return a.score > b.score;
         });
     return results;
 }
