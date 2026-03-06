@@ -33,6 +33,7 @@ std::string Member::getDisplayName() const {
 
 std::string Member::getMembershipStatus() const {
     if (!is_active_) return "Inactive";
+    if (isExpired())  return "Expired";
     return "Active";
 }
 
