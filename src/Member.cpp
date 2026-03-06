@@ -39,6 +39,7 @@ std::string Member::getMembershipStatus() const {
 
 void Member::addLoan(const std::string& loan_id) {
     loan_ids_.push_back(loan_id);
+    ++active_loan_count_;
 }
 
 void Member::removeLoan(const std::string& loan_id) {
