@@ -31,7 +31,7 @@ std::vector<SearchResult> SearchEngine::fuzzyMatch(const std::string& query) con
     std::vector<SearchResult> results;
     for (auto& book : catalog_) {
         double score = similarity(query, book.getTitle());
-        if (score >= 0.9) {
+        if (score >= 0.7) {
             results.push_back({const_cast<Book*>(&book), score});
         }
     }
