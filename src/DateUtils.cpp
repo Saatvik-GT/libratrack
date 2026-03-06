@@ -20,7 +20,7 @@ int DateUtils::daysBetween(const std::string& date1, const std::string& date2) {
 }
 
 bool DateUtils::isLeapYear(int year) {
-    return (year % 4 == 0);
+    return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
 }
 
 std::string DateUtils::formatDate(const std::tm& tm) {
