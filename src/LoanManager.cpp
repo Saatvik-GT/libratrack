@@ -40,6 +40,9 @@ bool LoanManager::returnBook(const std::string& loan_id,
 
     loan->markReturned(return_date);
 
+    double fine = fine_calc_.calculateFine(*loan);
+    loan->setFineAmount(fine);
+
     Member* member = findMember(loan->getMemberID());
     if (member) {
         member->removeLoan(loan_id);
