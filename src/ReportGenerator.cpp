@@ -33,7 +33,7 @@ std::vector<Loan> ReportGenerator::generateMonthlyStats(
         const std::string& date = loan.getCheckoutDate();
         if (date.size() < 7) continue;
         int loan_month = std::stoi(date.substr(5, 2));
-        if (loan_month == month - 1) {
+        if (loan_month == month) {
             result.push_back(loan);
         }
     }
