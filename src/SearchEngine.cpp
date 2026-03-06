@@ -47,14 +47,7 @@ std::vector<Book*> SearchEngine::searchByAuthor(const std::string& query) const 
         std::string author = book.getAuthor();
         std::transform(author.begin(), author.end(), author.begin(), ::tolower);
 
-        std::string last_word;
-        size_t pos = author.rfind(' ');
-        if (pos != std::string::npos)
-            last_word = author.substr(pos + 1);
-        else
-            last_word = author;
-
-        if (last_word.find(q) != std::string::npos) {
+        if (author.find(q) != std::string::npos) {
             results.push_back(const_cast<Book*>(&book));
         }
     }
